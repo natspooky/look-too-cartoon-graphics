@@ -114,19 +114,37 @@ body, html {
     text-align: center;
     pointer-events: none;
 }
-.game-container .game-panels {
+.game-container .game-panels, .game-container .start-panel {
     position: relative;
     width: 100%;
     height: calc(100% - 100px);
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: scale(0.7);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s cubic-bezier(.18,.28,.53,1.2), transform 0.4s cubic-bezier(.18,.28,.4,2.2);
+}
+.game-container .start-panel {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 100px);
+
+}
+.game-container .game-panels.hidden {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: unset;
 }
 .game-container .game-panels .settings-container {
     position: relative;
     width: auto;
     height: auto;
     display: flex;
+    float: right;
     flex-direction: column;
     padding: 0 10px;
     background-color: var(--mainColour);
@@ -191,7 +209,7 @@ body, html {
     height: calc(100vh - 150px);
     width: calc(100vh - 150px);
     margin-right: 100px;
-    background-color: #f0f0f010;
+    background-color: var(--textColour);
 }
 #popup {
     width: auto;
