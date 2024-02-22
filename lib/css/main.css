@@ -134,7 +134,7 @@ body, html {
     height: calc(100% - 100px);
 
 }
-.game-container .game-panels.hidden {
+.game-container .game-panels.unhidden {
     transform: scale(1);
     opacity: 1;
     pointer-events: unset;
