@@ -19,7 +19,7 @@
 
 
       <div class="game-panels buttons unhidden" id="home">
-        <button onclick="changePage('upload', this.parentNode); startGame()">
+        <button onclick="changePage('upload', this.parentNode)">
           <GIS-icon title="add_new"></GIS-icon>
           <h1>Custom (PP)icross!</h1>
         </button>
@@ -73,10 +73,10 @@
         <div class="picross-container" id="Picross">
         </div>
         <div class="settings-container">
-          <button name="Custom (PP)icross!">
+          <button name="Custom (PP)icross!" onclick="changePage('upload', this.parentNode.parentNode)">
             <GIS-icon title="add_new"></GIS-icon>
           </button>
-          <button name="Mega (PP)icross!">
+          <button name="Mega (PP)icross!" onclick="changePage('mega', this.parentNode.parentNode)">
             <GIS-icon title="apps"></GIS-icon>
           </button>
           <button onclick="toggleSSM()" name="Change Settings">
