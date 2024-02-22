@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Exo 2', sans-serif;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+:root
+{
+    --textColour: #f0f0f0;
+    --mainColour: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: var(--textColour);
+    border-radius: 100vmax;
+}
+::-webkit-scrollbar
+{
+    width: 5px;
+	height: 0px;
+    background-color: transparent;
+}
+body, html {
+    height: 100%;
+    width: 100%;
+    user-select: none;
+    scroll-behavior: smooth;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    scrollbar-width: none;
+    color: var(--textColour);
+    background-color: var(--accentColour);
+}
