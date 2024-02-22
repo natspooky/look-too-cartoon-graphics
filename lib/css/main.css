@@ -142,6 +142,7 @@ body, html {
     border: 2px solid var(--borderColour);
     font-size: 20px;
     margin: 20px;
+    cursor: pointer;
     color: var(--textColour);
 }
 .game-container .start-panel button GIS-icon {
@@ -227,12 +228,21 @@ body, html {
     position: relative;
     height: calc(100vh - 150px);
     width: calc(100vh - 150px);
-    margin-right: 100px;
+    margin-right: 140px;
+}
+.game-container .game-panels .picross-container canvas::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: calc(100% + 20px);
+    width: calc(100% + 20px);
     border-radius: 20px;
     background-color: var(--mainColour);
     background-image: var(--grainTexture);
     border: 2px solid var(--borderColour);
-    padding: 0px;
+    z-index: -1;
 }
 #popup {
     width: auto;
