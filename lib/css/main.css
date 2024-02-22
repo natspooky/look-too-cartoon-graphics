@@ -126,10 +126,12 @@ body, html {
     height: 1em;
     background-color: var(--textColour);
 }
-.game-container .game-panels, .game-container .start-panel {
-    position: relative;
+.game-container .game-panels {
+    position: absolute;
+    top: 100px;
+    left: 0;
     width: 100%;
-    height: calc(100% - 100px);
+    height: calc(100% - 200px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,14 +140,8 @@ body, html {
     pointer-events: none;
     transition: 0.4s cubic-bezier(.18,.28,.53,1.2), transform 0.4s cubic-bezier(.18,.28,.4,2.2);
 }
-.game-container .start-panel {
-    position: absolute;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 200px);
-}
-.game-container .start-panel button {
+
+.game-container .game-panels.home button {
     position: relative;
     padding: 20px;
     border-radius: 20px;
@@ -157,7 +153,7 @@ body, html {
     cursor: pointer;
     color: var(--textColour);
 }
-.game-container .start-panel button GIS-icon {
+.game-container .game-panels.home button GIS-icon {
     position: relative;
     margin-bottom: 15px;
     background-color: var(--textColour);
@@ -166,7 +162,7 @@ body, html {
     display: block;
     height: 1em;
 }
-.game-container .game-panels.unhidden, .game-container .start-panel.unhidden {
+.game-container .game-panels.unhidden {
     transform: scale(1);
     opacity: 1;
     pointer-events: unset;
