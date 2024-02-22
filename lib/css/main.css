@@ -134,7 +134,7 @@ body, html {
     height: calc(100% - 100px);
 
 }
-.game-container .game-panels.hidden {
+.game-container .game-panels.unhidden {
     transform: scale(1);
     opacity: 1;
     pointer-events: unset;
@@ -209,7 +209,10 @@ body, html {
     height: calc(100vh - 150px);
     width: calc(100vh - 150px);
     margin-right: 100px;
-    background-color: var(--textColour);
+    background-color: var(--mainColour);
+    background-image: var(--grainTexture);
+    border: 2px solid var(--borderColour);
+    padding: 20px;
 }
 #popup {
     width: auto;
