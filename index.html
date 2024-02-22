@@ -18,16 +18,16 @@
       </h1>
 
 
-      <div class="game-panels home unhidden">
+      <div class="game-panels buttons unhidden" id="home">
         <button onclick="changePage('game', this.parentNode); startGame()">
           <GIS-icon title="add_new"></GIS-icon>
           <h1>Custom (PP)icross!</h1>
         </button>
-        <button onclick="changePage('mega', this.parentNode)">
-          <GIS-icon title="tiles"></GIS-icon>
+        <button onclick="changePage('upload', this.parentNode)">
+          <GIS-icon title="apps"></GIS-icon>
           <h1>Mega (PP)icross!</h1>
         </button>
-        <button>
+        <button onclick="toggleSSM()">
           <GIS-icon title="config"></GIS-icon>
           <h1>Change Settings</h1>
         </button>
@@ -37,12 +37,18 @@
         </button>
       </div>
 
-      <div class="game-panels" id="upload">
-        
-        <button onclick="document.getElementById('game').classList.toggle('unhidden');this.parentNode.classList.toggle('unhidden')">
-          <GIS-icon title="apps"></GIS-icon>
-          <h1>Upload Image</h1>
+      <div class="game-panels buttons" id="upload">
+        <button onclick="changePage('home', this.parentNode)">
+          <GIS-icon title="arrow_left"></GIS-icon>
+          <h1>Back To Menu</h1>
         </button>
+        <label for="uploader" style="cursor: pointer;">
+          <button style="z-index: -1;">
+            <GIS-icon title="upload"></GIS-icon>
+            <h1>Upload Image</h1>
+          </button>
+        </label>
+        <input accept="image/*" type="file" id="uploader" style="display: none;">
         <button onclick="">
           <GIS-icon title="PDS"></GIS-icon>
           <h1>Random Game</h1>
@@ -50,11 +56,11 @@
       </div>
 
 
-      <div class="game-panels" id="mega">
+      <div class="game-panels buttons" id="mega">
         
-        <button onclick="document.getElementById('game').classList.toggle('unhidden');this.parentNode.classList.toggle('unhidden')">
-          <GIS-icon title="apps"></GIS-icon>
-          <h1>Upload Image</h1>
+        <button onclick="changePage('home', this.parentNode)">
+          <GIS-icon title="arrow_left"></GIS-icon>
+          <h1>Back To Menu</h1>
         </button>
         <button onclick="">
           <GIS-icon title="PDS"></GIS-icon>
@@ -69,13 +75,9 @@
         <div class="settings-container">
           <button name="Custom (PP)icross!">
             <GIS-icon title="add_new"></GIS-icon>
-            <div>
-              <GIS-icon title="PDS"></GIS-icon>
-              <GIS-icon title="apps"></GIS-icon>
-            </div>
           </button>
           <button name="Mega (PP)icross!">
-            <GIS-icon title="tiles"></GIS-icon>
+            <GIS-icon title="apps"></GIS-icon>
           </button>
           <button onclick="toggleSSM()" name="Change Settings">
             <GIS-icon title="config"></GIS-icon>
