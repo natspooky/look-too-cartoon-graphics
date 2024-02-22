@@ -9,12 +9,174 @@
 
   <body>
 
+    <!-- game -->
+
+    <main class="game-container">
+      <h1 class="title">(PP)icross!</h1>
+      <div class="game-panels">
+        <div class="picross-container" id="Picross">
+          <canvas></canvas>
+        </div>
+        <div class="settings-container">
+          <button onclick="toggleSSM()" name="Settings">
+            <GIS-icon title="config"></GIS-icon>
+          </button>
+          <button name="Generate">
+            <GIS-icon title="add_new"></GIS-icon>
+            <div>
+              <GIS-icon title="PDS"></GIS-icon>
+              <GIS-icon title="apps"></GIS-icon>
+            </div>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- settings menu -->
+
+    <div id="SSM" style="display: none;">
+      <section>
+          <h1><GIS-icon title="gear"></GIS-icon>Sort Settings</h1>
+      </section>
+  
+      <section class="SSMsearch">
+          <h1><GIS-icon title="magnify"></GIS-icon>Search</h1>
+          <span class="SSMcategory">
+              <input class="SSMinput" type="text" ssminfo="Lets you search for a specific setting" placeholder="Search">
+          </span>
+      </section>
+
+      <section>
+          <h1><GIS-icon title="bookshelf"></GIS-icon>Output</h1>
+          <span class="SSMcategory SSMcheckbox">
+              <p>Red Channel</p>
+              <input type="checkbox" checked class="SSMinput" ssminfo="toggles the red channel" onclick="processor.toggleValue(this.checked, 0)">
+          </span>
+          <span class="SSMcategory SSMcheckbox">
+              <p>Green Channel</p>
+              <input type="checkbox" checked class="SSMinput" ssminfo="toggles the green channel" onclick="processor.toggleValue(this.checked, 1)">
+          </span>
+          <span class="SSMcategory SSMcheckbox">
+              <p>Blue Channel</p>
+              <input type="checkbox" checked class="SSMinput" ssminfo="toggles the blue channel" onclick="processor.toggleValue(this.checked, 2)">
+          </span>
+
+          <span class="SSMcategory SSMcheckbox">
+              <p>Inverse Mask</p>
+              <input type="checkbox" class="SSMinput" ssminfo="toggles the red channel" onclick="processor.toggleValue(this.checked, 3)">
+          </span>
+
+          <span class="SSMcategory SSMcheckbox">
+              <p>Reverse Sort</p>
+              <input type="checkbox" class="SSMinput" ssminfo="toggles the red channel" onclick="processor.toggleValue(this.checked, 4)">
+          </span>
+
+          <span class="SSMcategory SSMcheckbox">
+              <p>Display BitMap</p>
+              <input type="checkbox" class="SSMinput" ssminfo="displayed the bitMap used to filter the image" onclick="processor.toggleValue(this.checked, 5)">
+          </span>
+          
+      </section>
+
+      <section>
+          <h1><GIS-icon title="apps"></GIS-icon>Sorting</h1>
+          <span class="SSMcategory">
+              <p>Sorting Type</p>
+              <div class="SSMselection SSMinput" ssminfo="changes which method you want to use to sort the pixels">
+                  <div class="itemContainer">
+                      <span class="SSMheader">
+                          Grayscale Sorting
+                      </span>
+                      <span class="SSMitem" value="GRAY" onclick="processor.colorSpace('GRAY')">
+                          Grayscale Sorting
+                      </span>
+                      <span class="SSMitem" value="GRAY" onclick="processor.colorSpace('HSV')">
+                          HSV Sorting
+                      </span>
+                      <span class="SSMitem" value="LAB" onclick="processor.colorSpace('LAB')">
+                          LAB sorting
+                      </span>
+                      
+                  </div>
+              </div>
+          </span>
+      </section>
+      
+  
+      <section>
+          <h1><GIS-icon title="config"></GIS-icon>Threshold</h1>
+          <span class="SSMcategory">
+              <p>Lower Bound</p>
+              <input type="range" class="SSMinput" min="0" max="255" value="20" step="1" ssminfo="changes the lower bound used to sort the pixels" onchange="processor.lowerBound(this.value)">
+          </span>
+          <span class="SSMcategory">
+              <p>Upper Bound</p>
+              <input type="range" class="SSMinput" min="0" max="255" value="150" step="1" ssminfo="changes the upper bound used to sort the pixels" onchange="processor.upperBound(this.value)">
+          </span>
+          <span class="SSMcategory">
+              <p>HSV Threshold Type</p>
+              <div class="SSMselection SSMinput" ssminfo="changes which HSV property will be sorted when sorting by HSV">
+                  <div class="itemContainer">
+                      <span class="SSMheader">
+                          Value
+                      </span>
+                      <span class="SSMitem" value="Hue" onclick="processor.HSVfilter('Hue')">
+                          Hue
+                      </span>
+                      <span class="SSMitem" value="Saturation" onclick="processor.HSVfilter('Saturation')">
+                          Saturation
+                      </span>
+                      <span class="SSMitem" value="Value" onclick="processor.HSVfilter('Value')">
+                          Value
+                      </span>
+                      
+                  </div>
+              </div>
+          </span>
+          <span class="SSMcategory SSMcolour">
+              <p>LAB Colour Match</p>
+              <input type="color" class="SSMinput" ssminfo="changes the colour that will be matched to the pixels when sorting" onchange="processor.matchCol(processor.hexToRgb(this.value))">
+          </span>
+          <span class="SSMcategory">
+              <p>LAB Colour Threshold</p>
+              <input type="range" class="SSMinput" min="0" max="100" value="100" step="1" ssminfo="changes the threshold used to sort the pixels when using a LAB sort" onchange="processor.matchThresh(this.value)">
+          </span>
+      </section>
+  </div>
 
 
+  <div id="popup" class="active">
+    <GIS-icon title="alert"></GIS-icon>
+    <h1>this is the header text lol</h1>
+    <p>this is the paragraph textthis is the paragraph textthis is the paragraph textthis is the paragraph textthis is the paragraph textthis is the paragraph textthis is the paragraph textthis is the paragraph text</p>
+  </div>
 
-    <script language="javascript" type="text/javascript" src="p5.min.js"></script>
-    <script language="javascript" type="text/javascript" src="Picross.js"></script>
-    <script type="text/javascript" src="page.js"></script>
-    <script type="text/javascript" src="upload.js"></script>
+  <div id="loader">
+    <div>
+      <span style="left: 20px; top: 20px; animation-delay: 0s;"></span>
+      <span style="right: 20px; top: 20px; animation-delay: -0.5s;"></span>
+      <span style="right: 20px; bottom: 20px; animation-delay: -1s;"></span>
+      <span style="left: 20px; bottom: 20px; animation-delay: -1.5s;"></span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850.91 850.91">
+        <path d="M757.73.5h-193.28c-51.19,0-92.69,41.49-92.69,92.68v193.28c0,51.19,41.5,92.69,92.69,92.69h193.28c51.19,0,92.68-41.5,92.68-92.69V93.19c0-51.19-41.49-92.68-92.68-92.68ZM766.78,255.47c0,22.08-17.9,39.97-39.98,39.97h-131.43c-22.08,0-39.98-17.89-39.98-39.97V124.19c0-22.08,17.9-39.98,39.98-39.98h131.43c22.08,0,39.98,17.91,39.98,39.98v131.27Z"/>
+        <path d="M757.73,472.24h-193.28c-51.19,0-92.69,41.49-92.69,92.68v193.28c0,51.19,41.5,92.69,92.69,92.69h193.28c51.19,0,92.68-41.5,92.68-92.69v-193.28c0-51.19-41.49-92.68-92.68-92.68ZM766.78,727.2c0,22.08-17.9,39.97-39.98,39.97h-131.43c-22.08,0-39.98-17.89-39.98-39.97v-131.27c0-22.08,17.9-39.98,39.98-39.98h131.43c22.08,0,39.98,17.91,39.98,39.98v131.27Z"/>
+        <path d="M285.99,472.24H92.71C41.52,472.24.02,513.73.02,564.92v193.28c0,51.19,41.5,92.69,92.69,92.69h193.28c51.19,0,92.68-41.5,92.68-92.69v-193.28c0-51.19-41.49-92.68-92.68-92.68ZM295.04,727.2c0,22.08-17.9,39.97-39.98,39.97H123.63c-22.08,0-39.98-17.89-39.98-39.97v-131.27c0-22.08,17.9-39.98,39.98-39.98h131.43c22.08,0,39.98,17.91,39.98,39.98v131.27Z"/>
+        <path d="M285.99.5H92.71C41.52.5.02,41.99.02,93.18v193.28c0,51.19,41.5,92.69,92.69,92.69h193.28c51.19,0,92.68-41.5,92.68-92.69V93.19c0-51.19-41.49-92.68-92.68-92.68ZM295.04,255.47c0,22.08-17.9,39.97-39.98,39.97H123.63c-22.08,0-39.98-17.89-39.98-39.97V124.19c0-22.08,17.9-39.98,39.98-39.98h131.43c22.08,0,39.98,17.91,39.98,39.98v131.27Z"/>
+      </svg>
+    </div>
+  </div>
+
+    <script language="javascript" type="text/javascript" src="lib/js/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/js/Picross.js"></script>
+    <script type="text/javascript" src="lib/js/page.js"></script>
+    <script type="text/javascript" src="lib/js/upload.js"></script>
+    <script src="https://natski.netlify.app/lib/js/ENCORE_GIS.js"></script>
+    <script>
+        GIS_settings = {'style':1}
+    </script>
+    <script src="https://natski.netlify.app/lib/js/ENCORE_SSM.js"></script>
+    <script>
+        SSM_settings = {'style':1}
+    </script>
   </body>
 </html>

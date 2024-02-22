@@ -1,16 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *
 {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Exo 2', sans-serif;
+    font-size: 12px;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 :root
 {
     --textColour: #f0f0f0;
-    --mainColour: #0a0a0a;
+    --accentColour: #0a0a0a;
+    --mainColour: #151515;
+    --borderColour: #242424;
+    --grainTexture: url('../../icons/grain.png');
 }
 
 ::-webkit-scrollbar-thumb
@@ -34,4 +38,194 @@ body, html {
     scrollbar-width: none;
     color: var(--textColour);
     background-color: var(--accentColour);
+    background-image: var(--grainTexture);
+}
+#loader {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0a0a0a;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+#loader.loaded {
+    opacity: 0;
+    pointer-events: none;
+}
+#loader div {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform: translateY(0);
+    animation: fade 1.5s ease;
+    transition: 0.5s cubic-bezier(.18,.28,.53,1.2), transform 0.6s cubic-bezier(.56,-0.28,.83,.67);
+}
+#loader.loaded div {
+    transform: translateY(calc(-50vh - 200px));
+}
+#loader div svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: var(--textColour);
+}
+#loader div span {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-color: var(--textColour);
+    animation: loader 2s ease infinite;
+}
+
+@keyframes loader {
+    0%{opacity: 0;}
+    20%{opacity: 1;}
+    80%{opacity: 1;}
+    100%{opacity: 0;}
+}
+@keyframes fade {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.game-container .title {
+    position: relative;
+    width: 100%;
+    font-size: 50px;
+    line-height: 50px;
+    height: 50px;
+    margin-top: 50px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    transform: rotate(-2deg);
+    text-align: center;
+    pointer-events: none;
+}
+.game-container .game-panels {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 100px);
+    display: flex;
+    align-items: center;
+}
+.game-container .game-panels .settings-container {
+    position: relative;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    background-color: var(--mainColour);
+    background-image: var(--grainTexture);
+    border: 2px solid var(--borderColour);
+    border-radius: 100vmax;
+}
+.game-container .game-panels .settings-container button {
+    position: relative;
+    margin: 10px 0;
+    padding: 10px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+}
+.game-container .game-panels .settings-container button::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform-origin: top left;
+    opacity: 0;
+    border-radius: 50%;
+    background-color: #f0f0f030;
+    transform: scale(0.9) translate(-50%, -50%);
+    transition: 0.2s cubic-bezier(.18,.28,.53,1.2), transform 0.2s cubic-bezier(.18,.28,.4,2.2);
+}
+.game-container .game-panels .settings-container button:hover::before {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+}
+.game-container .game-panels .settings-container button::after {
+    position: absolute;
+    content: attr(name);
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(100% + 20px);
+    color: var(--textColour);
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+.game-container .game-panels .settings-container button:hover::after {
+    opacity: 1;
+}
+.game-container .game-panels .settings-container button GIS-icon {
+    position: relative;
+    background-color: var(--textColour);
+    width: 1em;
+    height: 1em;
+    font-size: 20px;
+}
+
+
+#popup {
+    width: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainColour);
+    background-image: var(--grainTexture);
+    border: 2px solid var(--borderColour);
+    border-radius: 20px;
+    padding: 25px 40px;
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: top left;
+    transform: scale(0.7) translate(-50%, -50%);
+    transition: 0.4s cubic-bezier(.18,.28,.53,1.2), transform 0.4s cubic-bezier(.18,.28,.4,2.2);
+}
+#popup.active {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+    pointer-events: unset;
+}
+#popup GIS-icon {
+    position: relative;
+    font-size: 80px;
+    width: 1em;
+    height: 1em;
+    background-color: var(--textColour);
+}
+#popup h1 {
+    position: relative;
+    font-size: 24px;
+    margin: 12px 0;
+    text-align: center;
+    max-width: 400px;
+}
+#popup p {
+    position: relative;
+    font-size: 16px;
+    text-align: center;
+    max-width: 400px;
 }
