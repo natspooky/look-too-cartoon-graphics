@@ -14,6 +14,7 @@
     --accentColour: #0a0a0a;
     --mainColour: #151515;
     --borderColour: #242424;
+    --themeColour: #004c67;
     --grainTexture: url('../../icons/grain.png');
 }
 
@@ -39,6 +40,9 @@ body, html {
     color: var(--textColour);
     background-color: var(--accentColour);
     background-image: var(--grainTexture);
+}
+body {
+    padding-top: 50px;
 }
 #loader {
     position: fixed;
@@ -99,7 +103,7 @@ body, html {
 .game-container {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 50px);
 }
 .game-container .title {
     position: relative;
@@ -108,7 +112,6 @@ body, html {
     font-size: 50px;
     line-height: 50px;
     height: 50px;
-    margin-top: 50px;
     font-weight: bold;
     letter-spacing: 5px;
     transform: rotate(-2deg) translateX(-50%);
@@ -152,6 +155,14 @@ body, html {
     margin: 20px;
     cursor: pointer;
     color: var(--textColour);
+    outline: 3px solid transparent;
+    transition: 0.2s cubic-bezier(.18,.28,.53,1.2), transform 0.2s cubic-bezier(.18,.28,.4,2.2), outline-offset 0.2s cubic-bezier(.18,.28,.4,2.2);
+    
+}
+.game-container .game-panels.buttons button:hover, .game-container .game-panels.buttons label:hover button {
+    outline: 3px solid var(--themeColour);
+    outline-offset: 10px;
+    background-color: var(--themeColour);
 }
 .game-container .game-panels.buttons button GIS-icon {
     position: relative;
