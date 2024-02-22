@@ -16,12 +16,14 @@
         <GIS-icon title="apps"></GIS-icon>
         (PP)icross!
       </h1>
+
+
       <div class="game-panels home unhidden">
-        <button onclick="document.getElementById('game').classList.toggle('unhidden');this.parentNode.classList.toggle('unhidden')">
+        <button onclick="changePage('game', this.parentNode); startGame()">
           <GIS-icon title="add_new"></GIS-icon>
           <h1>Custom (PP)icross!</h1>
         </button>
-        <button>
+        <button onclick="changePage('mega', this.parentNode)">
           <GIS-icon title="tiles"></GIS-icon>
           <h1>Mega (PP)icross!</h1>
         </button>
@@ -34,6 +36,33 @@
           <h1>Learn (PP)icross!</h1>
         </button>
       </div>
+
+      <div class="game-panels" id="upload">
+        
+        <button onclick="document.getElementById('game').classList.toggle('unhidden');this.parentNode.classList.toggle('unhidden')">
+          <GIS-icon title="apps"></GIS-icon>
+          <h1>Upload Image</h1>
+        </button>
+        <button onclick="">
+          <GIS-icon title="PDS"></GIS-icon>
+          <h1>Random Game</h1>
+        </button>
+      </div>
+
+
+      <div class="game-panels" id="mega">
+        
+        <button onclick="document.getElementById('game').classList.toggle('unhidden');this.parentNode.classList.toggle('unhidden')">
+          <GIS-icon title="apps"></GIS-icon>
+          <h1>Upload Image</h1>
+        </button>
+        <button onclick="">
+          <GIS-icon title="PDS"></GIS-icon>
+          <h1>Random Game</h1>
+        </button>
+      </div>
+
+
       <div class="game-panels" id="game">
         <div class="picross-container" id="Picross">
         </div>
