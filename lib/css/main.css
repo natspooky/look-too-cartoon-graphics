@@ -261,7 +261,6 @@ body {
     background-color: var(--mainColour);
     background-image: var(--grainTexture);
     border: 2px solid var(--borderColour);
-    z-index: -1;
 }
 #popup {
     width: auto;
