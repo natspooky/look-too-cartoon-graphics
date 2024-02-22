@@ -107,24 +107,23 @@
       <section>
           <h1><GIS-icon title="apps"></GIS-icon>Sorting</h1>
           <span class="SSMcategory">
-              <p>size</p>
+              <p>Grid Size</p>
               <div class="SSMselection SSMinput" ssminfo="changes which method you want to use to sort the pixels">
                   <div class="itemContainer">
                       <span class="SSMheader">
                           5 x 5
                       </span>
-                      <span class="SSMitem" value="5" onclick="(() => {return Promise.resolve(loadImage('icons/5x5.png'))})().then((image) => {img = image; startGame()})">
+                      <span class="SSMitem" value="5" onclick="size = 5">
                           5 x 5
                       </span>
-                      <span class="SSMitem" value="10" onclick="(() => {return Promise.resolve(loadImage('icons/7x7.png'))})().then((image) => {img = image; startGame()})">
+                      <span class="SSMitem" value="10" onclick="size = 10">
                           10 x 10
                       </span>
 
-                      <span class="SSMitem" value="15" onclick="(() => {return Promise.resolve(loadImage('icons/15x15.png'))})().then((image) => {img = image; startGame()})">
+                      <span class="SSMitem" value="15" onclick="size = 15">
                         15 x 15
                     </span>
                      
-                      
                   </div>
               </div>
           </span>
