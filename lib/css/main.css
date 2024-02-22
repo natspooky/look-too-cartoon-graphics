@@ -114,9 +114,11 @@ body {
     height: 50px;
     font-weight: bold;
     letter-spacing: 5px;
-    transform: rotate(-2deg) translateX(-50%);
+    transform: translateX(-50%);
     text-align: center;
     pointer-events: none;
+    transform-origin: top left;
+    animation: title 3s ease-in-out infinite;
 }
 .game-container .title GIS-icon
 {
@@ -306,4 +308,10 @@ body {
     font-size: 16px;
     text-align: center;
     max-width: 400px;
+}
+
+@keyframes title {
+    0%{transform: rotate(2deg) translateX(-50%);}
+    50%{transform: rotate(-2deg) translateX(-50%);}
+    100%{transform: rotate(2deg) translateX(-50%);}
 }
