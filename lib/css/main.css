@@ -120,6 +120,7 @@ body, html {
     height: calc(100% - 100px);
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .game-container .game-panels .settings-container {
     position: relative;
@@ -182,8 +183,16 @@ body, html {
     height: 1em;
     font-size: 20px;
 }
-
-
+.game-container .game-panels .picross-container {
+    position: relative;
+}
+.game-container .game-panels .picross-container canvas {
+    position: relative;
+    height: calc(100vh - 150px);
+    width: calc(100vh - 150px);
+    margin-right: 100px;
+    background-color: #f0f0f010;
+}
 #popup {
     width: auto;
     position: fixed;
