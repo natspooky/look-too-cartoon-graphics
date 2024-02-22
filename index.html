@@ -14,21 +14,42 @@
     <main class="game-container">
       <h1 class="title">(PP)icross!</h1>
       <div class="start-panel">
-
+        <button>
+          <GIS-icon title="add_new"></GIS-icon>
+          <h1>Custom (PP)icross!</h1>
+        </button>
+        <button>
+          <GIS-icon title="tiles"></GIS-icon>
+          <h1>Mega (PP)icross!</h1>
+        </button>
+        <button>
+          <GIS-icon title="config"></GIS-icon>
+          <h1>Change Settings</h1>
+        </button>
+        <button>
+          <GIS-icon title="information"></GIS-icon>
+          <h1>Learn (PP)icross!</h1>
+        </button>
       </div>
       <div class="game-panels unhidden">
         <div class="picross-container" id="Picross">
         </div>
         <div class="settings-container">
-          <button onclick="toggleSSM()" name="Settings">
-            <GIS-icon title="config"></GIS-icon>
-          </button>
-          <button name="Generate">
+          <button name="Custom (PP)icross!">
             <GIS-icon title="add_new"></GIS-icon>
             <div>
               <GIS-icon title="PDS"></GIS-icon>
               <GIS-icon title="apps"></GIS-icon>
             </div>
+          </button>
+          <button name="Mega (PP)icross!">
+            <GIS-icon title="tiles"></GIS-icon>
+          </button>
+          <button onclick="toggleSSM()" name="Change Settings">
+            <GIS-icon title="config"></GIS-icon>
+          </button>
+          <button name="Learn (PP)icross!">
+            <GIS-icon title="information"></GIS-icon>
           </button>
         </div>
       </div>

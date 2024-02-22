@@ -131,10 +131,29 @@ body, html {
     top: 100px;
     left: 0;
     width: 100%;
-    height: calc(100% - 100px);
-
+    height: calc(100% - 200px);
 }
-.game-container .game-panels.unhidden {
+.game-container .start-panel button {
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--mainColour);
+    background-image: var(--grainTexture);
+    border: 2px solid var(--borderColour);
+    font-size: 20px;
+    margin: 20px;
+    color: var(--textColour);
+}
+.game-container .start-panel button GIS-icon {
+    position: relative;
+    margin-bottom: 15px;
+    background-color: var(--textColour);
+    font-size: 40px;
+    width: 1em;
+    display: block;
+    height: 1em;
+}
+.game-container .game-panels.unhidden, .game-container .start-panel.unhidden {
     transform: scale(1);
     opacity: 1;
     pointer-events: unset;
@@ -209,10 +228,11 @@ body, html {
     height: calc(100vh - 150px);
     width: calc(100vh - 150px);
     margin-right: 100px;
+    border-radius: 20px;
     background-color: var(--mainColour);
     background-image: var(--grainTexture);
     border: 2px solid var(--borderColour);
-    padding: 20px;
+    padding: 0px;
 }
 #popup {
     width: auto;
