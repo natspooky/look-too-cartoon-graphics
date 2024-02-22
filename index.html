@@ -12,7 +12,10 @@
     <!-- game -->
 
     <main class="game-container">
-      <h1 class="title">(PP)icross!</h1>
+      <h1 class="title">
+        <GIS-icon title="apps"></GIS-icon>
+        (PP)icross!
+      </h1>
       <div class="start-panel unhidden">
         <button onclick="document.getElementById('game').classList.toggle('unhidden');this.parentNode.classList.toggle('unhidden')">
           <GIS-icon title="add_new"></GIS-icon>
@@ -69,56 +72,27 @@
           </span>
       </section>
 
-      <section>
-          <h1><GIS-icon title="bookshelf"></GIS-icon>Output</h1>
-          <span class="SSMcategory SSMcheckbox">
-              <p>Red Channel</p>
-              <input type="checkbox" checked class="SSMinput" ssminfo="toggles the red channel" onclick="processor.toggleValue(this.checked, 0)">
-          </span>
-          <span class="SSMcategory SSMcheckbox">
-              <p>Green Channel</p>
-              <input type="checkbox" checked class="SSMinput" ssminfo="toggles the green channel" onclick="processor.toggleValue(this.checked, 1)">
-          </span>
-          <span class="SSMcategory SSMcheckbox">
-              <p>Blue Channel</p>
-              <input type="checkbox" checked class="SSMinput" ssminfo="toggles the blue channel" onclick="processor.toggleValue(this.checked, 2)">
-          </span>
-
-          <span class="SSMcategory SSMcheckbox">
-              <p>Inverse Mask</p>
-              <input type="checkbox" class="SSMinput" ssminfo="toggles the red channel" onclick="processor.toggleValue(this.checked, 3)">
-          </span>
-
-          <span class="SSMcategory SSMcheckbox">
-              <p>Reverse Sort</p>
-              <input type="checkbox" class="SSMinput" ssminfo="toggles the red channel" onclick="processor.toggleValue(this.checked, 4)">
-          </span>
-
-          <span class="SSMcategory SSMcheckbox">
-              <p>Display BitMap</p>
-              <input type="checkbox" class="SSMinput" ssminfo="displayed the bitMap used to filter the image" onclick="processor.toggleValue(this.checked, 5)">
-          </span>
-          
-      </section>
 
       <section>
           <h1><GIS-icon title="apps"></GIS-icon>Sorting</h1>
           <span class="SSMcategory">
-              <p>Sorting Type</p>
+              <p>size</p>
               <div class="SSMselection SSMinput" ssminfo="changes which method you want to use to sort the pixels">
                   <div class="itemContainer">
                       <span class="SSMheader">
-                          Grayscale Sorting
+                          5 x 5
                       </span>
-                      <span class="SSMitem" value="GRAY" onclick="processor.colorSpace('GRAY')">
-                          Grayscale Sorting
+                      <span class="SSMitem" value="5" onclick="Promise.resolve(loadImage('icon/5x5.png')).then((image) => {img = image; setup()})">
+                          5 x 5
                       </span>
-                      <span class="SSMitem" value="GRAY" onclick="processor.colorSpace('HSV')">
-                          HSV Sorting
+                      <span class="SSMitem" value="10" onclick="Promise.resolve(loadImage('icon/10x10.png')).then((image) => {img = image; setup()})">
+                          10 x 10
                       </span>
-                      <span class="SSMitem" value="LAB" onclick="processor.colorSpace('LAB')">
-                          LAB sorting
-                      </span>
+
+                      <span class="SSMitem" value="15" onclick="Promise.resolve(loadImage('icon/15x15.png')).then((image) => {img = image; setup()})">
+                        15 x 15
+                    </span>
+                     
                       
                   </div>
               </div>
