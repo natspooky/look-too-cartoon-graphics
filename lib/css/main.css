@@ -289,6 +289,9 @@ body {
     transform: scale(1) translate(-50%, -50%);
     pointer-events: unset;
 }
+#popup * {
+    pointer-events: none;
+}
 #popup GIS-icon {
     position: relative;
     font-size: 80px;
