@@ -93,7 +93,7 @@
       <div class="game-panels buttons" id="mega">
         <h1 class="gameTitle">
           <GIS-icon title="PSS"></GIS-icon>
-          Size Select
+          Level Select
         </h1>
         <button onclick="changePage('home', this.parentNode)">
           <GIS-icon title="arrow_left"></GIS-icon>
@@ -101,15 +101,15 @@
         </button>
         <button onclick="">
           <GIS-icon title="tiles"></GIS-icon>
-          <h1>5 x 5 Puzzles</h1>
+          <h1>Level 1</h1>
         </button>
         <button onclick="">
           <GIS-icon title="tiles"></GIS-icon>
-          <h1>10 x 10 Puzzles</h1>
+          <h1>Level 2</h1>
         </button>
         <button onclick="">
           <GIS-icon title="tiles"></GIS-icon>
-          <h1>15 x 15 Puzzles</h1>
+          <h1>Level 3</h1>
         </button>
       </div>
 
@@ -134,7 +134,7 @@
           <button name="Image To Picross!" onclick="changePage('upload', this.parentNode.parentNode)">
             <GIS-icon title="upload"></GIS-icon>
           </button>
-          <button name="Random Picross!" onclick="changePage('upload', this.parentNode.parentNode)">
+          <button name="Random Picross!" onclick="isImage = false; gallery = false; startGame();">
             <GIS-icon title="PDS"></GIS-icon>
           </button>
           <button name="Mega Picross!" onclick="changePage('mega', this.parentNode.parentNode)">
