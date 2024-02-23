@@ -99,7 +99,7 @@
           <GIS-icon title="arrow_left"></GIS-icon>
           <h1>Back To Menu</h1>
         </button>
-        <button onclick="generateGalleryTile(size, 'icons/15x15.png'); changePage('gallery', this.parentNode)">
+        <button onclick="generateGalleryTile(size, 'https://natski.netlify.app/icon/thumbnails/SSC.png'); changePage('gallery', this.parentNode)">
           <GIS-icon title="tiles"></GIS-icon>
           <h1>Level 1</h1>
         </button>
@@ -113,11 +113,15 @@
         </button>
       </div>
 
-      <div class="game-panels" id="gallery">
+      <div class="game-panels buttons" id="gallery">
         <h1 class="gameTitle">
           <GIS-icon title="crop"></GIS-icon>
           Segment Select
         </h1>
+        <button onclick="changePage('mega', this.parentNode)" style="margin-top: 50px;">
+          <GIS-icon title="arrow_left"></GIS-icon>
+          <h1>Back To Menu</h1>
+        </button>
         <div id="smallImages">
           
         </div>
