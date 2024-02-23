@@ -182,7 +182,7 @@ body {
 }
 .game-container .game-panels #smallImages span::after {
     position: absolute;
-    content: 'not<br>complete';
+    content: 'not completed';
     top: 0;
     left: 0;
     width: 100%;
