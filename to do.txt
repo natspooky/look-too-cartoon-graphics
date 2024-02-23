@@ -1,0 +1,18 @@
+tasks: 
+
+drag to fill / remove / cross
+
+fix import image
+
+fix random creation
+
+if enough time, make a tutorial engine.
+
+make fix mistake settings --> make cross that cannot be deselected
+
+mega picross engine
+
+make mega save to local
+
+mega picross UI
+

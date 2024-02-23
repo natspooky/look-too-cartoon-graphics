@@ -43,6 +43,7 @@ body, html {
 }
 body {
     padding-top: 50px;
+    overflow: hidden;
 }
 #loader {
     position: fixed;
@@ -67,12 +68,12 @@ body {
     position: relative;
     width: 300px;
     height: 300px;
-    transform: translateY(0);
+    transform: translateY(0) scale(0.6);
     animation: fade 1.5s ease;
     transition: 0.5s cubic-bezier(.18,.28,.53,1.2), transform 0.6s cubic-bezier(.56,-0.28,.83,.67);
 }
 #loader.loaded div {
-    transform: translateY(calc(-50vh - 200px));
+    transform: translateY(calc(-50vh - 200px)) scale(0.6);
 }
 #loader div svg {
     position: absolute;
@@ -93,7 +94,7 @@ body {
 @keyframes loader {
     0%{opacity: 0;}
     20%{opacity: 1;}
-    80%{opacity: 1;}
+    30%{opacity: 1;}
     100%{opacity: 0;}
 }
 @keyframes fade {
@@ -107,24 +108,29 @@ body {
 }
 .game-container .title {
     position: relative;
-    width: fit-content;
-    left: 50%;
-    font-size: 50px;
+    width: 100%;
+    left: 0;
+    top: 0;
     line-height: 50px;
     height: 50px;
-    font-weight: bold;
-    letter-spacing: 5px;
-    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+
     text-align: center;
     pointer-events: none;
-    transform-origin: top left;
-    animation: title 3s ease-in-out infinite;
+}
+.game-container .title span {
+    position: relative;
+    font-size: 50px;
+    margin: 0 5px;
+    animation: title 2.5s ease-in-out infinite;
 }
 .game-container .title GIS-icon
 {
     position: relative; 
-    margin-right: 5px;
-    transform: translateY(10px);
+    transform: translateY(5px);
     display: inline-block;
     font-size: 50px;
     width: 1em;
@@ -153,7 +159,10 @@ body {
     background-color: var(--mainColour);
     background-image: var(--grainTexture);
     border: 2px solid var(--borderColour);
-    font-size: 20px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 20px;
     cursor: pointer;
     color: var(--textColour);
@@ -174,6 +183,23 @@ body {
     width: 1em;
     display: block;
     height: 1em;
+}
+.game-container .game-panels .gameTitle {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--textColour);
+    font-size: 30px;
+}
+.game-container .game-panels .gameTitle GIS-icon {
+    position: relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-size: 30px;
+    margin-right: 10px;
+    background-color: var(--textColour);
 }
 .game-container .game-panels.unhidden {
     transform: scale(1);
@@ -242,6 +268,33 @@ body {
     height: 1em;
     font-size: 20px;
 }
+.game-container .settings {
+    position: absolute;
+    top: -40px;
+    right: 10px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.game-container .settings button {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: var(--mainColour);
+    background-image: var(--grainTexture);
+    border-radius: 50%;
+    border: 2px solid var(--borderColour);
+}
+.game-container .settings button GIS-icon {
+    position: relative;
+    font-size: 15px;
+    width: 1em;
+    height: 1em;
+    background-color: var(--textColour);
+}
 .game-container .game-panels .picross-container {
     position: relative;
 }
@@ -264,6 +317,30 @@ body {
     background-image: var(--grainTexture);
     border: 2px solid var(--borderColour);
 }
+.SSC .container
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.55s ease;
+}
+.SSC .container GIS-icon
+{
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    margin: 0 15px 0 0;
+    background-color: var(--textColour);
+}
+.SSC .container h1 {
+    font-size: 30px;
+    margin-bottom: 7px;
+}
+.SSC .container p {
+    font-size: 16px;
+}
 #popup {
     width: auto;
     position: fixed;
@@ -280,6 +357,7 @@ body {
     padding: 25px 40px;
     opacity: 0;
     pointer-events: none;
+    cursor: pointer;
     transform-origin: top left;
     transform: scale(0.7) translate(-50%, -50%);
     transition: 0.4s cubic-bezier(.18,.28,.53,1.2), transform 0.4s cubic-bezier(.18,.28,.4,2.2);
@@ -312,9 +390,33 @@ body {
     text-align: center;
     max-width: 400px;
 }
+#popup .second {
+    font-size: 20px;
+    margin-top: 20px;
+    animation: loading 2s ease infinite;
+}
 
 @keyframes title {
-    0%{transform: rotate(2deg) translateX(-50%);}
-    50%{transform: rotate(-2deg) translateX(-50%);}
-    100%{transform: rotate(2deg) translateX(-50%);}
+    0%{transform: translateY(-7px); color: var(--textColour);}
+    50%{transform: translateY(7px); color: var(--themeColour);}
+    100%{transform: translateY(-7px); color: var(--textColour);}
+}
+
+@keyframes titleGIS {
+    0%{background-color: var(--textColour);}
+    50%{background-color: var(--themeColour);}
+    100%{background-color: var(--textColour);}
+}
+
+@keyframes fadeIn {
+    from{transform: translateY(30%); opacity: 0;}
+    to{transform: translateY(0%); opacity: 1;}
+}
+
+@keyframes loading {
+    0%{transform: rotate(0);}
+    25%{transform: rotate(90deg);}
+    50%{transform: rotate(90deg);}
+    75%{transform: rotate(180deg);}
+    100%{transform: rotate(180deg);}
 }
