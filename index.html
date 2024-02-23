@@ -113,17 +113,18 @@
         </button>
       </div>
 
-      <div class="game-panels grid" id="five">
-        <div>
-          <button></button>
+      <div class="game-panels" id="gallery">
+        <h1 class="gameTitle">
+          <GIS-icon title=""></GIS-icon>
+          Segment Select
+        </h1>
+        <div id="smallImages">
+          
         </div>
       </div>
 
+
       <div class="game-panels" id="game">
-        <h1 class="gameTitle">
-          <GIS-icon title="puzzle"></GIS-icon>
-          Puzzle
-        </h1>
         <div class="picross-container" id="Picross">
         </div>
         <div class="settings-container">
@@ -166,14 +167,14 @@
                       <span class="SSMheader">
                           5 x 5
                       </span>
-                      <span class="SSMitem" value="5" onclick="size = 5">
+                      <span class="SSMitem" value="5" onclick="size = 5; checkGal()">
                           5 x 5
                       </span>
-                      <span class="SSMitem" value="10" onclick="size = 10">
+                      <span class="SSMitem" value="10" onclick="size = 10; checkGal()">
                           10 x 10
                       </span>
 
-                      <span class="SSMitem" value="15" onclick="size = 15">
+                      <span class="SSMitem" value="15" onclick="size = 15; checkGal()">
                         15 x 15
                     </span>
                      

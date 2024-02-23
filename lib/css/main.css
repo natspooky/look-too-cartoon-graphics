@@ -297,25 +297,19 @@ body {
 }
 .game-container .game-panels .picross-container {
     position: relative;
+    margin-right: 140px;
+    height: fit-content;
+    width: fit-content;
+    padding: 15px 20px 20px 15px;
+    border-radius: 20px;
+    background-color: var(--mainColour);
+    background-image: var(--grainTexture);
+    border: 2px solid var(--borderColour);
 }
 .game-container .game-panels .picross-container canvas {
     position: relative;
     height: calc(100vh - 150px);
     width: calc(100vh - 150px);
-    margin-right: 140px;
-}
-.game-container .game-panels .picross-container canvas::before {
-    position: absolute;
-    content: '';
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    height: calc(100% + 20px);
-    width: calc(100% + 20px);
-    border-radius: 20px;
-    background-color: var(--mainColour);
-    background-image: var(--grainTexture);
-    border: 2px solid var(--borderColour);
 }
 .SSC .container
 {
