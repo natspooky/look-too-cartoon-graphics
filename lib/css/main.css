@@ -182,7 +182,7 @@ body {
     opacity: 0;
     filter: grayscale(1);
     transform: scale(1);
-    transition: 0.3s;
+    transition: 0.1s;
 }
 .game-container .game-panels #smallImages span.won img {
     filter: grayscale(0);
