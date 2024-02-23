@@ -156,6 +156,7 @@ body {
 .game-container .game-panels.buttons button {
     position: relative;
     padding: 20px;
+    min-width: 120px;
     border-radius: 20px;
     background-color: var(--mainColour);
     background-image: var(--grainTexture);
