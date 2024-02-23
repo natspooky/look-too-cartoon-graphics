@@ -154,8 +154,13 @@ body {
 }
 .game-container .game-panels #smallImages {
     position: relative;
+    margin-top: 50px;
     width: 55vh;
     height: 55vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     border-radius: 20px;
     padding: 20px;
     background-color: var(--mainColour);
@@ -164,6 +169,7 @@ body {
 }
 .game-container .game-panels #smallImages span {
     position: relative;
+    display: block;
 }
 .game-container .game-panels #smallImages span img {
     position: absolute;
