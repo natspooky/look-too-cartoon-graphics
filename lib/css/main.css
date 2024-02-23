@@ -101,6 +101,13 @@ body {
     from{opacity: 0;}
     to{opacity: 1;}
 }
+.back {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
 .game-container {
     position: relative;
     width: 100%;
