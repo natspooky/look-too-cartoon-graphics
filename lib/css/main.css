@@ -155,7 +155,7 @@ body {
 .game-container .game-panels #smallImages {
     position: relative;
     margin-top: 50px;
-    margin-right: 20px;
+    margin-left: 20px;
     width: 55vh;
     height: 55vh;
     display: flex;
@@ -269,7 +269,7 @@ body {
     border: 2px solid var(--borderColour);
     border-radius: 100vmax;
 }
-.game-container .game-panels .settings-container button {
+.game-container .game-panels .settings-container .button {
     position: relative;
     margin: 10px 0;
     padding: 10px;
@@ -278,7 +278,7 @@ body {
     cursor: pointer;
     background-color: transparent;
 }
-.game-container .game-panels .settings-container button::before {
+.game-container .game-panels .settings-container .button::before {
     position: absolute;
     content: '';
     top: 50%;
@@ -292,11 +292,11 @@ body {
     transform: scale(0.9) translate(-50%, -50%);
     transition: 0.2s cubic-bezier(.18,.28,.53,1.2), transform 0.2s cubic-bezier(.18,.28,.4,2.2);
 }
-.game-container .game-panels .settings-container button:hover::before {
+.game-container .game-panels .settings-container .button:hover::before {
     opacity: 1;
     transform: scale(1) translate(-50%, -50%);
 }
-.game-container .game-panels .settings-container button::after {
+.game-container .game-panels .settings-container .button::after {
     position: absolute;
     content: attr(name);
     top: 50%;
@@ -308,10 +308,10 @@ body {
     pointer-events: none;
     transition: 0.2s ease;
 }
-.game-container .game-panels .settings-container button:hover::after {
+.game-container .game-panels .settings-container .button:hover::after {
     opacity: 1;
 }
-.game-container .game-panels .settings-container button GIS-icon {
+.game-container .game-panels .settings-container .button GIS-icon {
     position: relative;
     background-color: var(--textColour);
     width: 1em;
@@ -361,15 +361,30 @@ body {
     height: calc(100vh - 150px);
     width: calc(100vh - 150px);
 }
-.SSC .container
+.container
 {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadeIn 0.55s ease;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 15px;
+    text-align: left;
+    background-color: var(--mainColour);
+    border: 2px solid var(--borderColour);
+    background-image: var(--grainTexture);
+    outline: 3px solid transparent;
+    color: var(--textColour);
+    cursor: pointer;
+    transition: 0.2s cubic-bezier(.18,.28,.53,1.2), transform 0.2s cubic-bezier(.18,.28,.4,2.2), outline-offset 0.2s cubic-bezier(.18,.28,.4,2.2);
 }
-.SSC .container GIS-icon
+.container:hover {
+    outline: 3px solid var(--themeColour);
+    outline-offset: 10px;
+    background-color: var(--themeColour);
+}
+.container GIS-icon
 {
     position: relative;
     display: inline-block;
@@ -378,11 +393,11 @@ body {
     margin: 0 15px 0 0;
     background-color: var(--textColour);
 }
-.SSC .container h1 {
+.container h1 {
     font-size: 30px;
     margin-bottom: 7px;
 }
-.SSC .container p {
+.container p {
     font-size: 16px;
 }
 #popup {

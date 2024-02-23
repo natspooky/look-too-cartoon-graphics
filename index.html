@@ -35,59 +35,34 @@
         </button>
       </div>
 
-      <div class="game-panels unhidden" id="home">
-        <h1 class="gameTitle">
-          <GIS-icon title="import"></GIS-icon>
-          Mode Select
-        </h1>
-        <div class="SSC" style="opacity: 0; display: none; height: 65%; margin-top: 50px; width: 700px; border: 2px solid var(--borderColour); background-color: var(--mainColour); background-image: url('icons/grain.png'); border-radius: 20px;">
+      <div class="game-panels unhidden" id="home" style="flex-direction: column;">
 
-          <div class="banner-bg" style="background-color: #ff03e630;">
-      
-    
-              <div class="container">
-                <GIS-icon title="tiles"></GIS-icon>
-                <div class="textWrapper">
-                    <h1>Mega Picross!</h1>
-                    <p>Complete multiple miniature picross<br>games to reveal an image!</p>
-                </div>
-            </div>
-      
-              <a class="banner-button" onclick="changePage('mega', this.parentNode.parentNode.parentNode)">Select Mode</a>
-    
+        <button class="container" onclick="changePage('mega', this.parentNode)">
+          <GIS-icon title="tiles"></GIS-icon>
+          <div class="textWrapper">
+              <h1>Mega Picross!</h1>
+              <p>Complete multiple miniature picross<br>games to reveal an image!</p>
           </div>
+        </button>
 
-          <div class="banner-bg" style="background-color: #0335ff30;">
-      
-            <div class="container">
-              <GIS-icon title="upload"></GIS-icon>
-              <div class="textWrapper">
-                  <h1>Image To Picross!</h1>
-                  <p>Play a unique level based off<br>of images from your device!</p>
-              </div>
+        <label class="container" for="uploader" onclick="">
+          <GIS-icon title="upload"></GIS-icon>
+          <div class="textWrapper">
+              <h1>Image To Picross!</h1>
+              <p>Play a unique level based off<br>of images from your device!</p>
           </div>
-  
-            <label for="uploader" style="cursor: pointer;" class="banner-button">Upload & Select Mode</label>
-            <input accept="image/*" type="file" id="uploader" style="display: none;">
-        </div>
+        </label>
+        <input accept="image/*" type="file" id="uploader" style="display: none;">
 
-        <div class="banner-bg" style="background-color: #03ffc030;">
-      
-          <div class="container">
-            <GIS-icon title="PDS"></GIS-icon>
-            <div class="textWrapper">
-                <h1>Random Picross!</h1>
-                <p>Play a randomly generated level<br>based on a grayscale colour map!</p>
-            </div>
-        </div>
-  
-          <a class="banner-button" onclick="isImage = false; gallery = false; startGame(); changePage('game', this.parentNode.parentNode.parentNode)">Select Mode</a>
+        <button class="container" onclick="isImage = false; gallery = false; startGame(); changePage('game', this.parentNode)">
+          <GIS-icon title="PDS"></GIS-icon>
+          <div class="textWrapper">
+              <h1>Random Picross!</h1>
+              <p>Play a randomly generated level<br>based on a grayscale colour map!</p>
+          </div>
+        </button>
 
-      </div>
-      
         </div>
-
-      </div>
 
 
       <div class="game-panels buttons" id="mega">
@@ -132,16 +107,16 @@
         <div class="picross-container" id="Picross">
         </div>
         <div class="settings-container">
-          <button name="Main Menu" onclick="changePage('home', this.parentNode.parentNode)">
+          <button class="button" name="Main Menu" onclick="changePage('home', this.parentNode.parentNode)">
             <GIS-icon title="home"></GIS-icon>
           </button>
-          <button name="Image To Picross!" onclick="changePage('upload', this.parentNode.parentNode)">
+          <label class="button" name="Image To Picross!" for="uploader">
             <GIS-icon title="upload"></GIS-icon>
-          </button>
-          <button name="Random Picross!" onclick="isImage = false; gallery = false; startGame();">
+          </label>
+          <button class="button" name="Random Picross!" onclick="isImage = false; gallery = false; startGame();">
             <GIS-icon title="PDS"></GIS-icon>
           </button>
-          <button name="Mega Picross!" onclick="changePage('mega', this.parentNode.parentNode)">
+          <button class="button" name="Mega Picross!" onclick="changePage('mega', this.parentNode.parentNode)">
             <GIS-icon title="tiles"></GIS-icon>
           </button>
         </div>
@@ -229,17 +204,6 @@
     <script src="https://natski.netlify.app/lib/js/ENCORE_SSM.js"></script>
     <script>
         SSM_settings = {'style':1}
-    </script>
-    <script src="https://natski.netlify.app/lib/js/ENCORE_SSC.js"></script>
-    <script>
-        SSC_settings={
-            'thumbs':true,
-            'progressBar':true,
-            'sideButtons':true,
-            'pauseButton':false,
-            'timer':10000,
-            'style':'COMPACT'
-        }
     </script>
     
   </body>
