@@ -181,14 +181,18 @@ body {
     height: 100%;
     opacity: 0;
     filter: grayscale(1);
+    transform: scale(1);
     transition: 0.3s;
 }
 .game-container .game-panels #smallImages span.won img {
     filter: grayscale(0);
 }
+.game-container .game-panels #smallImages span:hover img {
+    z-index: 999;
+    transform: scale(1.1);
+}
 .game-container .game-panels #smallImages span::after {
     position: absolute;
-    content: 'not completed';
     top: 0;
     left: 0;
     width: 100%;
