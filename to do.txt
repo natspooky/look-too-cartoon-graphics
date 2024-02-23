@@ -2,7 +2,6 @@ tasks:
 
 drag to fill / remove / cross
 
-fix import image
 
 fix random creation
 
