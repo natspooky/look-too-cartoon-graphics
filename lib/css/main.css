@@ -162,10 +162,10 @@ body {
     background-image: var(--grainTexture);
     border: 2px solid var(--borderColour);
 }
-.game-container .game-panels #smallImages div {
+.game-container .game-panels #smallImages span {
     position: relative;
 }
-.game-container .game-panels #smallImages div img {
+.game-container .game-panels #smallImages span img {
     position: absolute;
     top: 0;
     left: 0;
@@ -174,7 +174,7 @@ body {
     opacity: 0;
     transition: 0.3s;
 }
-.game-container .game-panels #smallImages div::after {
+.game-container .game-panels #smallImages span::after {
     position: absolute;
     content: 'not<br>complete';
     top: 0;
@@ -188,7 +188,7 @@ body {
     background-image: var(--grainTexture);
     z-index: 4;
 }
-.game-container .game-panels #smallImages div.won::after {
+.game-container .game-panels #smallImages span.won::after {
     display: none;
 }
 .game-container .game-panels.buttons button {
