@@ -1,17 +1,18 @@
 tasks: 
 
-drag to fill / remove / cross
+yay background done!
 
+hey micheal can you see this??
 
 fix random creation
 
-if enough time, make a tutorial engine.
 
-make fix mistake settings --> make cross that cannot be deselected
 
-mega picross engine
 
-make mega save to local
 
-mega picross UI
+
+
+
+
+
 
