@@ -202,7 +202,7 @@ body {
     pointer-events: none;
     background-color: var(--themeColour);
     background-image: var(--grainTexture);
-    z-index: 5;
+    z-index: 9999;
 
 }
 .game-container .game-panels #smallImages span.won::after {
