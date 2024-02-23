@@ -154,6 +154,7 @@ body {
 }
 .game-container .game-panels #smallImages {
     position: relative;
+    margin-top: 40px;
     width: 55vh;
     height: 55vh;
     border-radius: 20px;
