@@ -155,6 +155,7 @@ body {
 .game-container .game-panels #smallImages {
     position: relative;
     margin-top: 50px;
+    margin-right: 20px;
     width: 55vh;
     height: 55vh;
     display: flex;
@@ -192,7 +193,9 @@ body {
     align-items: center;
     background-color: var(--themeColour);
     background-image: var(--grainTexture);
-    z-index: 4;
+    z-index: 2;
+    opacity: 0;
+
 }
 .game-container .game-panels #smallImages span.won::after {
     display: none;
