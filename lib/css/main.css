@@ -173,6 +173,7 @@ body {
     display: block;
     cursor: pointer;
     transform: scale(1);
+    z-index: unset;
     transition: 0.1s;
 }
 .game-container .game-panels #smallImages span img {
@@ -201,7 +202,7 @@ body {
     pointer-events: none;
     background-color: var(--themeColour);
     background-image: var(--grainTexture);
-    z-index: 2;
+    z-index: 5;
 
 }
 .game-container .game-panels #smallImages span.won::after {
