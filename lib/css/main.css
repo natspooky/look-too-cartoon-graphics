@@ -144,6 +144,7 @@ body {
     width: 100%;
     height: calc(100% - 200px);
     display: flex;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
     transform: scale(0.7);
@@ -204,6 +205,7 @@ body {
 .game-container .game-panels.unhidden {
     transform: scale(1);
     opacity: 1;
+    visibility: visible;
     pointer-events: unset;
 }
 .game-container .game-panels .settings-container {
@@ -341,6 +343,7 @@ body {
     top: 50%;
     left: 50%;
     display: flex;
+    visibility: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -360,6 +363,7 @@ body {
     opacity: 1;
     transform: scale(1) translate(-50%, -50%);
     pointer-events: unset;
+    visibility: visible;
 }
 #popup * {
     pointer-events: none;
