@@ -15,6 +15,7 @@
     --mainColour: #151515;
     --borderColour: #242424;
     --themeColour: #004c67;
+    --shadowSettings: -5px 5px 10px 0px #00000080;
     --grainTexture: url('../../icons/grain.png');
 }
 
@@ -184,6 +185,7 @@ body {
     align-items: center;
     border-radius: 20px;
     padding: 20px;
+    box-shadow: var(--shadowSettings);
     background-color: var(--mainColour);
     background-image: var(--grainTexture);
     border: 2px solid var(--borderColour);
@@ -242,6 +244,7 @@ body {
     align-items: center;
     margin: 20px;
     cursor: pointer;
+    box-shadow: var(--shadowSettings);
     color: var(--textColour);
     outline: 3px solid transparent;
     transition: 0.2s cubic-bezier(.18,.28,.53,1.2), transform 0.2s cubic-bezier(.18,.28,.4,2.2), outline-offset 0.2s cubic-bezier(.18,.28,.4,2.2);
@@ -291,6 +294,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0 10px;
+    box-shadow: var(--shadowSettings);
     background-color: var(--mainColour);
     background-image: var(--grainTexture);
     border: 2px solid var(--borderColour);
@@ -364,6 +368,7 @@ body {
     background-color: var(--mainColour);
     background-image: var(--grainTexture);
     border-radius: 50%;
+    box-shadow: var(--shadowSettings);
     border: 2px solid var(--borderColour);
 }
 .game-container .settings button GIS-icon {
@@ -383,6 +388,7 @@ body {
     background-color: var(--mainColour);
     background-image: var(--grainTexture);
     border: 2px solid var(--borderColour);
+    box-shadow: -5px 5px 10px 0px #00000080;
 }
 .game-container .game-panels .picross-container canvas {
     position: relative;
@@ -404,6 +410,7 @@ body {
     background-image: var(--grainTexture);
     outline: 3px solid transparent;
     color: var(--textColour);
+    box-shadow: -5px 5px 10px 0px #00000080;
     cursor: pointer;
     transition: 0.2s cubic-bezier(.18,.28,.53,1.2), transform 0.2s cubic-bezier(.18,.28,.4,2.2), outline-offset 0.2s cubic-bezier(.18,.28,.4,2.2);
 }
@@ -447,6 +454,7 @@ body {
     z-index: 99;
     pointer-events: none;
     cursor: pointer;
+    box-shadow: var(--shadowSettings);
     transform-origin: top left;
     transform: scale(0.7) translate(-50%, -50%);
     transition: 0.4s cubic-bezier(.18,.28,.53,1.2), transform 0.4s cubic-bezier(.18,.28,.4,2.2);
