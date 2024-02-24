@@ -128,7 +128,7 @@ body {
     font-weight: 300;
     text-align: center;
     pointer-events: none;
-    z-index: 999;
+    z-index: 99;
     transition: 0.6s ease;
 }
 .game-container .title.full {
@@ -444,6 +444,7 @@ body {
     border-radius: 20px;
     padding: 25px 40px;
     opacity: 0;
+    z-index: 99;
     pointer-events: none;
     cursor: pointer;
     transform-origin: top left;
