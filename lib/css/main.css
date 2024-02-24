@@ -122,12 +122,18 @@ body {
     line-height: 50px;
     height: 50px;
     display: flex;
+    transform: scale(1) translateY(0);
     justify-content: center;
     align-items: center;
     font-weight: 300;
-
     text-align: center;
     pointer-events: none;
+    z-index: 999;
+    transition: 0.6s ease;
+}
+.game-container .title.full {
+    top: 50%;
+    transform: scale(2) translateY(calc(-50% - 20px));
 }
 .game-container .title span {
     position: relative;
@@ -159,6 +165,12 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: 0.4s cubic-bezier(.18,.28,.53,1.2), transform 0.4s cubic-bezier(.18,.28,.4,2.2);
+}
+.game-container .game-panels .startText {
+    position: relative;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-top: 170px;
 }
 .game-container .game-panels #smallImages {
     position: relative;
@@ -205,14 +217,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    outline: 1px solid #f0f0f0;
     pointer-events: none;
     background-color: var(--themeColour);
     background-image: var(--grainTexture);
-    z-index: 9999;
-
+    z-index: 2;
 }
 .game-container .game-panels #smallImages span.won::after {
     display: none;
